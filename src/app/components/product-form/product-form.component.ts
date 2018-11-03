@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-form',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
+  constructor(public productService: ProductService) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  addProduct(event, product) {
+    this.productService.addProduct(product);
   }
-
 }
