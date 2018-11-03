@@ -1,5 +1,8 @@
-<p>
-  product-form works!
-</p>
+<form (ngSubmit)="addProduct()">
 
-<button (click)="addProduct($event)">Add product</button>
+  <input type="text" name="name" [(ngModel)]="product.name">
+  <input type="text" name="description" [(ngModel)]="product.description">
+  <input type="number" name="price" [(ngModel)]="product.price">
+
+  <button type="submit">Save</button>
+</form>
