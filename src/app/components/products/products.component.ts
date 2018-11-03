@@ -23,7 +23,9 @@ export class ProductsComponent implements OnInit {
 
   deleteProduct(event, product) {
     console.log(product);
-    this.productService.deleteProducts(product);
+    if (confirm('Esta seguro de eliminar')) {
+      this.productService.deleteProducts(product);
+    }
   }
 
   editProduct(event, product) {
